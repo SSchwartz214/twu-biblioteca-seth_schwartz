@@ -30,8 +30,8 @@ public class BookListTest {
     @Test
     public void shouldReturnStringOfBookTitles() {
         BookList bookList = new BookList();
-        StringBuilder sb = new StringBuilder("Animal Farm\nThe Giver\nFifty Shades of Grey\n");
+        StringBuilder sb = new StringBuilder("Animal Farm | George Orwell | 1945\nThe Giver | Louis Lowry | 1993\nFifty Shades of Grey | E. L. James | 2011");
 
-        assertThat(bookList.printBookList(bookList.getBookList()).toString(), is("Animal Farm\nThe Giver\nFifty Shades of Grey\n"));
+        assertThat(bookList.printBookList(bookList.getBookList()).toString(), is("Animal Farm | George Orwell | 1945\nThe Giver | Louis Lowry | 1993\nFifty Shades of Grey | E. L. James | 2011\n"));
     }
 }

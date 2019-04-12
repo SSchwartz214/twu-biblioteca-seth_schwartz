@@ -17,6 +17,14 @@ public class BookList {
         StringBuilder sb = new StringBuilder();
         for (Book book : bookList) {
             sb.append(book.getTitle());
+            sb.append(" ");
+            sb.append("|");
+            sb.append(" ");
+            sb.append(book.getAuthor());
+            sb.append(" ");
+            sb.append("|");
+            sb.append(" ");
+            sb.append(book.getPublished());
             sb.append("\n");
         }
         return sb;
