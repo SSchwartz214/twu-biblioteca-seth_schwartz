@@ -12,4 +12,13 @@ public class BookList {
 
         return list;
     }
+
+    public StringBuilder printBookList(ArrayList<Book> bookList) {
+        StringBuilder sb = new StringBuilder();
+        for (Book book : bookList) {
+            sb.append(book.getTitle());
+            sb.append("\n");
+        }
+        return sb;
+    }
 }

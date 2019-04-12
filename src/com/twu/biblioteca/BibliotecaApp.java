@@ -7,6 +7,6 @@ public class BibliotecaApp {
         BookList bookList = new BookList();
 
         System.out.println(welcomeMessage.printWelcomeMessage());
-        System.out.println(bookList.getBookList());
+        System.out.println(bookList.printBookList(bookList.getBookList()));
     }
 }

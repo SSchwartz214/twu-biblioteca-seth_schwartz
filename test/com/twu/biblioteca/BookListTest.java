@@ -26,4 +26,12 @@ public class BookListTest {
         assertThat(bookList.getBookList().get(1).getAuthor(), is("Louis Lowry"));
         assertThat(bookList.getBookList().get(2).getPublished(), is(2011));
     }
+
+    @Test
+    public void shouldReturnStringOfBookTitles() {
+        BookList bookList = new BookList();
+        StringBuilder sb = new StringBuilder("Animal Farm\nThe Giver\nFifty Shades of Grey\n");
+
+        assertThat(bookList.printBookList(bookList.getBookList()).toString(), is("Animal Farm\nThe Giver\nFifty Shades of Grey\n"));
+    }
 }
