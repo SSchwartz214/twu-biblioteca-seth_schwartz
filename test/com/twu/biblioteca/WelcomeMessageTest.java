@@ -10,6 +10,7 @@ public class WelcomeMessageTest {
     @Test
     public void shouldReturnWelcomeMessage() {
         WelcomeMessage welcomeMessage = new WelcomeMessage();
+
         assertThat(welcomeMessage.printWelcomeMessage(), is("Welcome to Biblioteca.  Your one-stop-shop for great book titles in Bangalore!"));
     }
 }
