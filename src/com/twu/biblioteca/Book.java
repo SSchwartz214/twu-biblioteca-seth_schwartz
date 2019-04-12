@@ -1,19 +1,26 @@
 package com.twu.biblioteca;
 
 public class Book {
+
     private String title;
     private String author;
-    private short published;
+    private int published;
 
-    public String getTitle() {
+    public Book(String title, String author, int published) {
+        this.title = title;
+        this.author = author;
+        this.published = published;
+    }
+
+        public String getTitle () {
         return this.title;
     }
 
-    public String getAuthor() {
+        public String getAuthor () {
         return this.author;
     }
 
-    public short published() {
+        public int getPublished () {
         return this.published;
     }
 }
