@@ -7,7 +7,7 @@ public class BookList {
 
     public ArrayList<Book> getBookList() {
         list.add( new Book("Animal Farm", "George Orwell", 1945) );
-        list.add( new Book("The Giver", "Louis Lowryl", 1993) );
+        list.add( new Book("The Giver", "Louis Lowry", 1993) );
         list.add( new Book("Fifty Shades of Grey", "E. L. James", 2011) );
 
         return list;

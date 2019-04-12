@@ -20,7 +20,7 @@ public class Book {
         return this.author;
     }
 
-        public int published () {
+        public int getPublished () {
         return this.published;
     }
 }

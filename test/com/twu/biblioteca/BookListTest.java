@@ -10,6 +10,7 @@ public class BookListTest {
     @Test
     public void shouldReturnListOfBooks() {
         BookList bookList = new BookList();
+
         assertThat((bookList.getBookList()), hasSize(3));
 
         String str1 = bookList.getBookList().get(0).toString();
@@ -20,5 +21,9 @@ public class BookListTest {
 
         String str3 = bookList.getBookList().get(2).toString();
         assertThat(str3, hasToString(str3));
+
+        assertThat(bookList.getBookList().get(0).getTitle(), is("Animal Farm"));
+        assertThat(bookList.getBookList().get(1).getAuthor(), is("Louis Lowry"));
+        assertThat(bookList.getBookList().get(2).getPublished(), is(2011));
     }
 }
