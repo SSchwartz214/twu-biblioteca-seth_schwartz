@@ -3,13 +3,13 @@ import java.util.ArrayList;
 
 
 public class BookList {
-    private ArrayList<String> books = new ArrayList<String>();
+    private ArrayList<Book> bookList = new ArrayList<Book>();
 
     public ArrayList<String> getBookList() {
-        books.add("The Giver");
-        books.add("50 Shades of Gray");
-        books.add("Cat in the Hat");
+        bookList.add( new Book("Animal Farm", "George Orwell", 1945) );
+        bookList.add( new Book("The Giver", "Louis Lowryl", 1993) );
+        bookList.add( new Book("Fifty Shades of Grey", "E. L. James", 2011) );
 
-        return books;
+        return bookList;
     }
 }

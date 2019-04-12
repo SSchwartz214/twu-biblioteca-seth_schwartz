@@ -11,10 +11,10 @@ public class BookListTest {
     @Test
     public void shouldReturnListOfBooks() {
         BookList bookList = new BookList();
-        ArrayList<String> books = new ArrayList<String>();
-        books.add("The Giver");
-        books.add("50 Shades of Gray");
-        books.add("Cat in the Hat");
+        ArrayList<Book> bookList = new ArrayList<Book>();
+        bookList.add( new Book("Animal Farm", "George Orwell", 1945) );
+        bookList.add( new Book("The Giver", "Louis Lowryl", 1993) );
+        bookList.add( new Book("Fifty Shades of Grey", "E. L. James", 2011) );
 
         assertThat(bookList.getBookList(), is(books));
         assertThat(books, hasSize(3));
