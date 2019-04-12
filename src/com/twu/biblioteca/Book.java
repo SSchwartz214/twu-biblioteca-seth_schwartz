@@ -4,9 +4,9 @@ public class Book {
 
     private String title;
     private String author;
-    private short published;
+    private int published;
 
-    public Book(String title, String author, short published) {
+    public Book(String title, String author, int published) {
         this.title = title;
         this.author = author;
         this.published = published;
@@ -20,7 +20,7 @@ public class Book {
         return this.author;
     }
 
-        public short published () {
+        public int published () {
         return this.published;
     }
 }
