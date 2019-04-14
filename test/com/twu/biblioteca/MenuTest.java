@@ -25,6 +25,4 @@ public class MenuTest {
         //then
         assertThat(result2, is(false));
     }
-
-
 }
