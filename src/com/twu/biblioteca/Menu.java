@@ -4,11 +4,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
-    private String option1 = "(1) List of Books";
+    private final String[] options = {"(1) List of Books",
+                                      "(2) quit"
+                                     };
     private Library library = new Library();
 
     public void printMenuOptions() {
-        System.out.println("Please select one of the following options:\n" + option1);
+        System.out.println("Please select one of the following options:\n");
+        for (String option : options) {
+            System.out.println(option);
+        }
+        System.out.println();
     }
 
     public String getOption() {
@@ -18,6 +24,8 @@ public class Menu {
         String userOption = reader.nextLine();
         if (!validateOption(userOption)) {
             System.out.println("Please select a valid option!");
+            printMenuOptions();
+            getOption();
         }
 
         return userOption;
@@ -26,11 +34,17 @@ public class Menu {
     public void selectOption(String input) {
         if (input.equals("1")) {
             System.out.println(library.printBookList());
+
+        } else if (input.equals("2")) {
+            System.exit(0);
         }
+
+        printMenuOptions();
+        getOption();
     }
 
     public void run() {
-        //TODO print welcome message
+        System.out.println("Welcome to Biblioteca.  Your one-stop-shop for great book titles in Bangalore!\n");
         printMenuOptions();
         String selectedOption = getOption();
         selectOption(selectedOption);
@@ -39,6 +53,7 @@ public class Menu {
     public boolean validateOption(String userOption) {
         ArrayList<String> validOptions = new ArrayList<String>();
                 validOptions.add("1");
+                validOptions.add("2");
         if (validOptions.contains(userOption)) {
             return true;
         }
