@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
@@ -15,6 +16,9 @@ public class Menu {
         System.out.println("Enter option");
 
         String userOption = reader.nextLine();
+        if (!validateOption(userOption)) {
+            System.out.println("Please select a valid option!");
+        }
 
         return userOption;
     }
@@ -32,6 +36,14 @@ public class Menu {
         selectOption(selectedOption);
     }
 
+    public boolean validateOption(String userOption) {
+        ArrayList<String> validOptions = new ArrayList<String>();
+                validOptions.add("1");
+        if (validOptions.contains(userOption)) {
+            return true;
+        }
+        return false;
+    }
 }
 // Print options
 // Get user input(option)
