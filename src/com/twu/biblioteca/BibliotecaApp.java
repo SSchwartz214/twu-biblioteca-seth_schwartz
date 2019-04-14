@@ -3,10 +3,12 @@ package com.twu.biblioteca;
 public class BibliotecaApp {
 
     public static void main(String[] args) {
+        //TODO refactor into Menu class
         WelcomeMessage welcomeMessage = new WelcomeMessage();
-        BookList bookList = new BookList();
+        Menu menu = new Menu();
 
         System.out.println(welcomeMessage.printWelcomeMessage());
-        System.out.println(bookList.printBookList(bookList.getBookList()));
+        menu.run();
+//        System.out.println(bookList.printLibrary(bookList.getLibrary()));
     }
 }
