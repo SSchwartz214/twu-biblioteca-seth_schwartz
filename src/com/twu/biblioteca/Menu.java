@@ -40,7 +40,7 @@ public class Menu {
                 Scanner reader = new Scanner(System.in);
                 String bookTitle = reader.nextLine();
 
-                library.checkOut(bookTitle);
+                System.out.println(library.checkOut(bookTitle));
             }
             printMenuOptions();
             input = getOption();

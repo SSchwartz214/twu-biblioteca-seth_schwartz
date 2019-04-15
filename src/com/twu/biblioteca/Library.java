@@ -35,12 +35,13 @@ public class Library {
         return this.list;
     }
 
-    public void checkOut(String title) {
+    public String checkOut(String title) {
         for (Book book : list) {
-            if (book.getTitle().equals(title)) {
+            if (book.getTitle().equals(title) && book.isCheckedIn()) {
                 book.setCheckedIn(false);
-                System.out.println("Thank you! Enjoy the book!");
+                return "Thank you! Enjoy the book!";
             }
         }
+        return "Sorry, that book is not available";
     }
 }
