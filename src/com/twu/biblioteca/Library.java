@@ -37,9 +37,11 @@ public class Library {
 
     public void checkOut(String title) {
         for (Book book : list) {
-            if (book.getTitle().equals(title)) {
+            if (book.getTitle().equals(title) && book.isCheckedIn() == true) {
                 book.setCheckedIn(false);
                 System.out.println("Thank you! Enjoy the book!");
+            } else if (book.getTitle().equals(title) && book.isCheckedIn() == false) {
+                System.out.println("Sorry, that book is not available");
             }
         }
     }
