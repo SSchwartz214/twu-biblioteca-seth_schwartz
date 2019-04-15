@@ -34,4 +34,13 @@ public class LibraryTest {
 
         assertThat(library.printBookList().toString(), is("Animal Farm | George Orwell | 1945\nThe Giver | Louis Lowry | 1993\nFifty Shades of Grey | E. L. James | 2011\n"));
     }
+
+    @Test
+    public void shouldCheckoutABook() {
+        Library library = new Library();
+
+        library.checkOut("Animal Farm");
+
+        assertThat(library.getBooks().get(0).isCheckedIn(), is(false));
+    }
 }

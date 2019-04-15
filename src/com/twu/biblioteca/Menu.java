@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
-    private final String[] options = {"(1) List of Books",
-                                      "(2) quit"
+    private final String[] options = {"(1) View books",
+                                      "(2) Quit",
+                                      "(3) Check out a book"
                                      };
     private Library library = new Library();
 
@@ -24,23 +25,26 @@ public class Menu {
         String userOption = reader.nextLine();
         if (!validateOption(userOption)) {
             System.out.println("Please select a valid option!");
-            printMenuOptions();
-            getOption();
         }
-
         return userOption;
     }
 
     public void selectOption(String input) {
-        if (input.equals("1")) {
-            System.out.println(library.printBookList());
+        while (!input.equals("2")) {
+            if (input.equals("1")) {
+                System.out.println(library.printBookList());
+            } else if (input.equals("3")) {
+                System.out.println(library.printBookList());
+                System.out.println("Please enter the title of the book you would like to check out");
 
-        } else if (input.equals("2")) {
-            System.exit(0);
+                Scanner reader = new Scanner(System.in);
+                String bookTitle = reader.nextLine();
+
+                library.checkOut(bookTitle);
+            }
+            printMenuOptions();
+            input = getOption();
         }
-
-        printMenuOptions();
-        getOption();
     }
 
     public void run() {
@@ -54,12 +58,10 @@ public class Menu {
         ArrayList<String> validOptions = new ArrayList<String>();
                 validOptions.add("1");
                 validOptions.add("2");
+                validOptions.add("3");
         if (validOptions.contains(userOption)) {
             return true;
         }
         return false;
     }
 }
-// Print options
-// Get user input(option)
-// Take that option and return booklist
