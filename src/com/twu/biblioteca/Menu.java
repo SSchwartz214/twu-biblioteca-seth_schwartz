@@ -45,7 +45,7 @@ public class Menu {
                 System.out.println("Please enter the title of the book you would like to return");
                 Scanner reader = new Scanner(System.in);
                 String bookTitle = reader.nextLine();
-                library.returnBook(bookTitle);
+                System.out.println(library.returnBook(bookTitle));
             }
             printMenuOptions();
             input = getOption();

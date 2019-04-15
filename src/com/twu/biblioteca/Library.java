@@ -45,11 +45,13 @@ public class Library {
         return "Sorry, that book is not available";
     }
 
-    public void returnBook(String title) {
+    public String returnBook(String title) {
         for (Book book : list) {
             if (book.getTitle().equals(title) && !book.isCheckedIn()) {
                 book.setCheckedIn(true);
+                return "Thank you for returning the book.";
             }
         }
+        return "That is not a valid book to return.";
     }
 }
