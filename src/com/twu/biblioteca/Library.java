@@ -39,6 +39,7 @@ public class Library {
         for (Book book : list) {
             if (book.getTitle().equals(title)) {
                 book.setCheckedIn(false);
+                System.out.println("Thank you! Enjoy the book!");
             }
         }
     }
