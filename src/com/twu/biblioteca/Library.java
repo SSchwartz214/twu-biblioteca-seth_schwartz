@@ -42,7 +42,7 @@ public class Library {
                 return "Thank you! Enjoy the book!";
             }
         }
-        return "Sorry, that book is not available";
+        return "Sorry, that book is not available.";
     }
 
     public String returnBook(String title) {

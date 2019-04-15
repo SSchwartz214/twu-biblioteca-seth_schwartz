@@ -57,9 +57,9 @@ public class LibraryTest {
 
         library.checkOut("Animal Farm");
 
-        assertThat(library.checkOut("Animal Farm"), is("Sorry, that book is not available"));
+        assertThat(library.checkOut("Animal Farm"), is("Sorry, that book is not available."));
 
-        assertThat(library.checkOut("The Gaver"), is("Sorry, that book is not available"));
+        assertThat(library.checkOut("The Gaver"), is("Sorry, that book is not available."));
     }
 
     @Test
@@ -80,18 +80,17 @@ public class LibraryTest {
         Library library = new Library();
 
         library.checkOut("The Giver");
-        library.returnBook("The Giver");
 
-        assertThat(library.returnBook("The Giver"), is("Thank you for returning the book"));
+        assertThat(library.returnBook("The Giver"), is("Thank you for returning the book."));
     }
 
     @Test
     public void returnBookShouldReturnUnsuccessfulMessage() {
         Library library = new Library();
 
-        library.checkOut("The Giver");
-        library.returnBook("The Giver");
+        library.checkOut("Animal Farm");
 
-        assertThat(library.returnBook("The Giver"), is("That is not a valid book to return"));
+        assertThat(library.returnBook("The Giver"), is("That is not a valid book to return."));
+        assertThat(library.returnBook("The Gaver"), is("That is not a valid book to return."));
     }
 }
