@@ -43,4 +43,22 @@ public class LibraryTest {
 
         assertThat(library.getBooks().get(0).isCheckedIn(), is(false));
     }
+
+    @Test
+    public void checkOutBookShouldReturnSuccessMessage() {
+        Library library = new Library();
+
+        assertThat(library.checkOut("Animal Farm"), is("Thank you! Enjoy the book!"));
+    }
+
+    @Test
+    public void checkOutBookShouldReturnUnsuccessfulMessage() {
+        Library library = new Library();
+
+        library.checkOut("Animal Farm");
+
+        assertThat(library.checkOut("Animal Farm"), is("Sorry, that book is not available"));
+
+        assertThat(library.checkOut("The Gaver"), is("Sorry, that book is not available"));
+    }
 }
