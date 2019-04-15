@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
-    //TODO Rearrange options so quit is last
     private final String[] options = {"(1) View books",
-                                      "(2) Quit",
-                                      "(3) Check out a book",
-                                      "(4) Return a book"
+                                      "(2) Check out a book",
+                                      "(3) Return a book",
+                                      "(4) Quit"
                                      };
     private Library library = new Library();
 
@@ -32,16 +31,16 @@ public class Menu {
     }
 
     public void selectOption(String input) {
-        while (!input.equals("2")) {
+        while (!input.equals("4")) {
             if (input.equals("1")) {
                 System.out.println(library.printBookList());
-            } else if (input.equals("3")) {
+            } else if (input.equals("2")) {
                 System.out.println(library.printBookList());
                 System.out.println("Please enter the title of the book you would like to check out");
                 Scanner reader = new Scanner(System.in);
                 String bookTitle = reader.nextLine();
                 System.out.println(library.checkOut(bookTitle));
-            } else if (input.equals("4")) {
+            } else if (input.equals("3")) {
                 System.out.println("Please enter the title of the book you would like to return");
                 Scanner reader = new Scanner(System.in);
                 String bookTitle = reader.nextLine();
