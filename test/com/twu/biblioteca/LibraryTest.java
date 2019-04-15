@@ -74,4 +74,24 @@ public class LibraryTest {
 
         assertThat(library.getBooks().get(0).isCheckedIn(), is(true));
     }
+
+    @Test
+    public void returnBookShouldReturnSuccessMessage() {
+        Library library = new Library();
+
+        library.checkOut("The Giver");
+        library.returnBook("The Giver");
+
+        assertThat(library.returnBook("The Giver"), is("Thank you for returning the book"));
+    }
+
+    @Test
+    public void returnBookShouldReturnUnsuccessfulMessage() {
+        Library library = new Library();
+
+        library.checkOut("The Giver");
+        library.returnBook("The Giver");
+
+        assertThat(library.returnBook("The Giver"), is("That is not a valid book to return"));
+    }
 }
