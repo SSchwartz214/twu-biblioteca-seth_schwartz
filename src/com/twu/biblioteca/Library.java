@@ -44,4 +44,12 @@ public class Library {
         }
         return "Sorry, that book is not available";
     }
+
+    public void returnBook(String title) {
+        for (Book book : list) {
+            if (book.getTitle().equals(title) && !book.isCheckedIn()) {
+                book.setCheckedIn(true);
+            }
+        }
+    }
 }
